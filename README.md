@@ -1,50 +1,69 @@
 # portfolio
 
-Personal portfolio site for **Vivek Chaudhary** — software developer, Ahmedabad, Gujarat.
+Personal portfolio site for **Vivek Chaudhary** - Next.js / frontend developer, Ahmedabad.
 
-## About
+Built with Next.js 14 (App Router), React 18 and Tailwind CSS.
 
-This repository holds the source for my personal site: a short introduction, the projects I have worked on, and a way to get in touch.
-
-## Status
-
-Just created — the site itself is not built yet. The sections below describe the intended structure so the first build has a clear target.
-
-## Planned structure
-
-```
-portfolio/
-|-- index.html      landing page: intro, selected work, contact
-|-- assets/         images, icons, resume PDF
-|-- css/            styles
-`-- README.md
-```
-
-## Sections
-
-- **Intro** — who I am, what I build, current focus.
-- **Work** — 3 to 5 projects with a one-line summary, stack, and a link to the repo or live demo.
-- **About** — background, tools I use day to day.
-- **Contact** — email and links to GitHub and LinkedIn.
-
-## Running locally
-
-No build step planned. Clone the repo and open the page:
+## Run locally
 
 ```bash
-git clone https://github.com/chaudharyvivek1/portfolio.git
-cd portfolio
-open index.html
+npm install
+npm run dev
 ```
 
-## Roadmap
+Open http://localhost:3000
 
-- [ ] Write the landing page
-- [ ] Add project write-ups
-- [ ] Add a downloadable resume
-- [ ] Publish with GitHub Pages
+## Build
 
-## Contact
+```bash
+npm run build
+npm start
+```
 
-- GitHub: [@chaudharyvivek1](https://github.com/chaudharyvivek1)
-- Email: vivekchaudhary.b@gmail.com
+## Structure
+
+```
+app/
+  layout.jsx        metadata, theme bootstrap script
+  page.jsx          section composition
+  globals.css       Tailwind layers and custom utilities
+  icon.svg          favicon
+components/
+  Nav.jsx           sticky header with theme toggle
+  Hero.jsx          headline, status badge, current-role card
+  About.jsx         summary and quick facts
+  Skills.jsx        grouped skill chips
+  Experience.jsx    work timeline
+  Work.jsx          project cards
+  Education.jsx     degree and certification
+  Contact.jsx       contact links
+  Footer.jsx
+  SectionHeading.jsx
+  ThemeToggle.jsx   light/dark switch (localStorage)
+data/
+  content.js        all site copy in one place
+```
+
+## Editing content
+
+Everything the page renders lives in `data/content.js` - profile, skills, experience,
+projects, education and certification. Change it there, no component edits needed.
+
+## Design notes
+
+- Light and dark themes, toggled manually and remembered in `localStorage`;
+  first visit follows the OS preference.
+- Colours are defined in `tailwind.config.js` (`ink`, `paper`, `accent`).
+- Motion is limited to a short entrance animation, disabled under
+  `prefers-reduced-motion`.
+
+## Deploy
+
+The site builds as a standard Next.js app. Vercel is the simplest target:
+import the repo, keep the default build settings, deploy.
+
+## To do
+
+- [ ] Add `public/resume.pdf` and link it from the hero
+- [ ] Add screenshots to the project cards
+- [ ] Add a custom domain

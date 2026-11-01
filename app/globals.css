@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased dark:bg-[#080a0e] dark:text-[#e9ebf1];
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    @apply bg-accent/20;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-6 md:px-8;
+  }
+
+  .card {
+    @apply rounded-2xl border border-black/[0.07] bg-white dark:border-white/[0.09] dark:bg-white/[0.03];
+  }
+
+  .chip {
+    @apply rounded-full border border-black/[0.08] bg-white px-3 py-1 text-[13px] leading-5 text-neutral-700 dark:border-white/[0.1] dark:bg-white/[0.04] dark:text-neutral-300;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-500 dark:text-neutral-500;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-ink text-white hover:bg-neutral-800 dark:bg-white dark:text-ink dark:hover:bg-neutral-200;
+  }
+
+  .btn-ghost {
+    @apply border border-black/[0.1] bg-white text-ink hover:border-black/25 dark:border-white/[0.14] dark:bg-transparent dark:text-white dark:hover:border-white/30;
+  }
+
+  .link-underline {
+    @apply underline decoration-black/20 underline-offset-4 transition-colors hover:decoration-black/60 dark:decoration-white/25 dark:hover:decoration-white/70;
+  }
+}
+
+@layer utilities {
+  .bg-dots {
+    background-image: radial-gradient(circle at 1px 1px, rgba(13, 16, 23, 0.09) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .dark .bg-dots {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.07) 1px, transparent 0);
+  }
+
+  .glow {
+    background: radial-gradient(60% 60% at 70% 10%, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.16, 0.84, 0.44, 1) both;
+}
+
+.d1 { animation-delay: 0.05s; }
+.d2 { animation-delay: 0.12s; }
+.d3 { animation-delay: 0.19s; }
+.d4 { animation-delay: 0.26s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}
