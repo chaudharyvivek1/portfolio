@@ -1,6 +1,8 @@
-import { profile } from '@/data/content';
+import { profile, projects } from '@/data/content';
 
 export default function Hero() {
+  const shipped = projects.filter((project) => project.live || project.repo).length;
+
   return (
     <section className="relative overflow-hidden border-b border-black/[0.06] dark:border-white/[0.08]">
       <div className="pointer-events-none absolute inset-0 bg-dots opacity-60" aria-hidden="true" />
@@ -74,8 +76,8 @@ export default function Hero() {
 
             <dl className="grid grid-cols-2 gap-4 text-sm">
               <div>
-                <dt className="text-neutral-500 dark:text-neutral-500">Live projects</dt>
-                <dd className="mt-1 text-lg font-semibold tracking-tight">2 shipped</dd>
+                <dt className="text-neutral-500 dark:text-neutral-500">Public projects</dt>
+                <dd className="mt-1 text-lg font-semibold tracking-tight">{shipped} shipped</dd>
               </div>
               <div>
                 <dt className="text-neutral-500 dark:text-neutral-500">Education</dt>

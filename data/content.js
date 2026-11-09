@@ -79,6 +79,19 @@ export const experience = [
 
 export const projects = [
   {
+    name: 'UI Farm',
+    kind: 'Open-source project',
+    tagline: 'Component library for React, Next.js and Angular',
+    stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Angular'],
+    points: [
+      'Built a component library that ships every component as three source variants - React + TypeScript, React + JavaScript and Angular - with a live preview, props table and accessibility notes on each page.',
+      'Generated the JavaScript variants from the TypeScript source with esbuild so the two can never drift, and wrote the Angular versions as standalone components with signals and ControlValueAccessor.',
+      'Documented the project with a README, theming reference, architecture notes and a contribution guide, and statically generated the whole documentation site with Next.js.',
+    ],
+    live: null,
+    repo: 'https://github.com/chaudharyvivek1/ui-farm',
+  },
+  {
     name: 'ParkMatic Automation',
     kind: 'Freelance project',
     tagline: 'Landing site for a parking management business',
