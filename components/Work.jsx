@@ -15,7 +15,9 @@ export default function Work() {
           {projects.map((project, index) => (
             <article
               key={project.name}
-              className={`card flex flex-col p-6 sm:p-7${index === 2 ? ' md:col-span-2' : ''}`}
+              className={`card flex flex-col p-6 sm:p-7${
+                projects.length % 2 === 1 && index === projects.length - 1 ? ' md:col-span-2' : ''
+              }`}
             >
               <p className="eyebrow">{project.kind}</p>
               <h3 className="mt-3 text-xl font-semibold tracking-tight">{project.name}</h3>
