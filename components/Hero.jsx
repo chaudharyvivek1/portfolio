@@ -1,4 +1,4 @@
-import { profile, projects } from '@/data/content';
+import { education, profile, projects } from '@/data/content';
 
 export default function Hero() {
   const shipped = projects.filter((project) => project.live || project.repo).length;
@@ -19,8 +19,8 @@ export default function Hero() {
           </div>
 
           <h1 className="rise d1 mt-6 text-[2.5rem] font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.4rem]">
-            Building fast, considered interfaces for{' '}
-            <span className="text-accent dark:text-[#6b9bff]">real business software.</span>
+            {profile.headline}
+            <span className="text-accent dark:text-[#6b9bff]">{profile.headlineAccent}</span>
           </h1>
 
           <p className="rise d1 mt-4 text-[13px] font-medium uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-500">
@@ -81,7 +81,7 @@ export default function Hero() {
               </div>
               <div>
                 <dt className="text-neutral-500 dark:text-neutral-500">Education</dt>
-                <dd className="mt-1 text-lg font-semibold tracking-tight">B.E. CE, 2026</dd>
+                <dd className="mt-1 text-lg font-semibold tracking-tight">{`${education.shortDegree}, ${education.completionYear}`}</dd>
               </div>
             </dl>
           </div>

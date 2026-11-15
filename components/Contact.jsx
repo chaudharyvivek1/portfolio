@@ -1,11 +1,13 @@
 import { profile } from '@/data/content';
 
+const stripProtocol = (url) => url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+
 export default function Contact() {
   const links = [
     { label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
     { label: 'Phone', value: profile.phone, href: `tel:${profile.phoneHref}` },
-    { label: 'GitHub', value: 'github.com/chaudharyvivek1', href: profile.github },
-    { label: 'LinkedIn', value: 'linkedin.com/in/vivek-chaudhary123', href: profile.linkedin },
+    { label: 'GitHub', value: stripProtocol(profile.github), href: profile.github },
+    { label: 'LinkedIn', value: stripProtocol(profile.linkedin), href: profile.linkedin },
   ];
 
   return (
@@ -26,30 +28,33 @@ export default function Contact() {
               <div className="mt-7 flex flex-wrap gap-3">
                 <a href={`mailto:${profile.email}`} className="btn btn-primary">
                   Email me
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M5 12h14M13 6l6 6-6 6" />
                   </svg>
                 </a>
-                <a href={profile.linkedin} target="_blank" rel="noreferrer" className="btn btn-ghost">
+                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
                   Connect on LinkedIn
                 </a>
               </div>
             </div>
 
             <ul className="space-y-px overflow-hidden rounded-xl border border-black/[0.07] bg-black/[0.07] dark:border-white/[0.09] dark:bg-white/[0.09]">
-              {links.map((link) => (
-                <li key={link.label} className="bg-white dark:bg-[#0b0e13]">
-                  <a
-                    href={link.href}
-                    target={link.href.startsWith('http') ? '_blank' : undefined}
-                    rel="noreferrer"
-                    className="flex items-center justify-between gap-4 px-5 py-4 transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
-                  >
-                    <span className="text-[13px] font-medium uppercase tracking-wider text-neutral-500">{link.label}</span>
-                    <span className="text-right text-[14px] font-medium">{link.value}</span>
-                  </a>
-                </li>
-              ))}
+              {links.map((link) => {
+                const external = link.href.startsWith('http');
+                return (
+                  <li key={link.label} className="bg-white dark:bg-[#0b0e13]">
+                    <a
+                      href={link.href}
+                      target={external ? '_blank' : undefined}
+                      rel={external ? 'noopener noreferrer' : undefined}
+                      className="flex items-center justify-between gap-4 px-5 py-4 transition-colors hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
+                    >
+                      <span className="text-[13px] font-medium uppercase tracking-wider text-neutral-500">{link.label}</span>
+                      <span className="break-all text-right text-[14px] font-medium">{link.value}</span>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

@@ -1,19 +1,19 @@
 import SectionHeading from './SectionHeading';
-import { experience } from '@/data/content';
+import { experience, sections } from '@/data/content';
 
 export default function Experience() {
   return (
     <section id="experience" className="border-b border-black/[0.06] py-20 dark:border-white/[0.08]">
       <div className="container-page">
         <SectionHeading
-          eyebrow="Experience"
-          title="Where I have worked."
-          description="Production work on internal business tools, plus an internship building application features."
+          eyebrow={sections.experience.eyebrow}
+          title={sections.experience.title}
+          description={sections.experience.description}
         />
 
         <ol className="mt-10 space-y-4">
           {experience.map((job) => (
-            <li key={job.company} className="card p-6 sm:p-7">
+            <li key={`${job.company}-${job.role}`} className="card p-6 sm:p-7">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
                   <h3 className="text-[17px] font-semibold tracking-tight">{job.role}</h3>

@@ -8,10 +8,10 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} {profile.name}. Built with Next.js and Tailwind CSS.
         </p>
         <div className="flex items-center gap-5">
-          <a href={profile.github} target="_blank" rel="noreferrer" className="transition-colors hover:text-ink dark:hover:text-white">
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink dark:hover:text-white">
             GitHub
           </a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="transition-colors hover:text-ink dark:hover:text-white">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink dark:hover:text-white">
             LinkedIn
           </a>
           <a href={`mailto:${profile.email}`} className="transition-colors hover:text-ink dark:hover:text-white">

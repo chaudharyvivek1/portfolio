@@ -1,11 +1,11 @@
 import SectionHeading from './SectionHeading';
-import { education, certification } from '@/data/content';
+import { certification, education, sections } from '@/data/content';
 
 export default function Education() {
   return (
     <section id="education" className="border-b border-black/[0.06] py-20 dark:border-white/[0.08]">
       <div className="container-page">
-        <SectionHeading eyebrow="Education" title="Study and certification." />
+        <SectionHeading eyebrow={sections.education.eyebrow} title={sections.education.title} />
 
         <div className="mt-10 grid gap-4 lg:grid-cols-2">
           <div className="card p-6 sm:p-7">

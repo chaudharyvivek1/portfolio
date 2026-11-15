@@ -8,7 +8,8 @@ export const profile = {
   github: 'https://github.com/chaudharyvivek1',
   linkedin: 'https://www.linkedin.com/in/vivek-chaudhary123',
   status: 'Open to frontend and full-stack roles',
-  headline: 'Building fast, considered interfaces for real business software.',
+  headline: 'Building fast, considered interfaces for ',
+  headlineAccent: 'real business software.',
   summary:
     'Next.js developer with hands-on production experience building responsive, component-driven web applications using React, Tailwind CSS and Material UI. I build ERP and business-management interfaces professionally, and I am independently developing an AI-integrated Next.js application.',
   current: {
@@ -26,6 +27,48 @@ export const navLinks = [
   { label: 'Work', href: '#work' },
   { label: 'Contact', href: '#contact' },
 ];
+
+// Section headings. Every eyebrow / title / description on the page comes from here.
+export const sections = {
+  about: {
+    eyebrow: 'About',
+    title: 'Frontend work with a business edge.',
+  },
+  skills: {
+    eyebrow: 'Skills',
+    title: 'The toolkit I build with.',
+    description: 'Frontend is home, with enough backend to take a feature end to end.',
+  },
+  experience: {
+    eyebrow: 'Experience',
+    title: 'Where I have worked.',
+    description:
+      'Production work on internal business tools, plus an internship building application features.',
+  },
+  work: {
+    eyebrow: 'Selected work',
+    title: 'Projects I have shipped.',
+    description:
+      'An open-source component library, a freelance landing site, a full-stack CRUD app and an internship portal.',
+  },
+  education: {
+    eyebrow: 'Education',
+    title: 'Study and certification.',
+  },
+};
+
+export const about = {
+  paragraphs: [
+    'I am a frontend developer working mainly in Next.js. Day to day I build the interfaces behind ERP, payroll and business-management systems, which means the screens have to stay usable when the data gets dense, the forms get long and the workflows branch.',
+    'My approach is component-first: build the small pieces once, keep them predictable, and let the modules inherit the consistency. On the side I am growing backend skills in Node.js, Express and REST APIs, and building an AI-integrated Next.js application of my own.',
+  ],
+  facts: [
+    { label: 'Based in', value: 'Ahmedabad, India' },
+    { label: 'Working with', value: 'Next.js, React, Tailwind' },
+    { label: 'Currently', value: 'ERP & payroll interfaces' },
+    { label: 'Learning', value: 'Node.js, Express, REST' },
+  ],
+};
 
 export const skills = [
   {
@@ -131,9 +174,11 @@ export const projects = [
 
 export const education = {
   degree: 'B.E. in Computer Engineering',
+  shortDegree: 'B.E. CE',
   school: 'Apollo Institute of Engineering and Technology',
   university: 'Gujarat Technological University (GTU)',
   period: '2022 - 2026',
+  completionYear: '2026',
   score: 'CGPA 7.76 / 10',
 };
 
