@@ -1,4 +1,5 @@
 import { profile, navLinks } from '@/data/content';
+import MobileNav from './MobileNav';
 import ThemeToggle from './ThemeToggle';
 
 export default function Nav() {
@@ -12,7 +13,7 @@ export default function Nav() {
           <span className="hidden sm:inline">{profile.name}</span>
         </a>
 
-        <nav className="hidden items-center gap-7 text-sm text-neutral-600 md:flex dark:text-neutral-400">
+        <nav aria-label="Primary" className="hidden items-center gap-7 text-sm text-neutral-600 md:flex dark:text-neutral-400">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className="transition-colors hover:text-ink dark:hover:text-white">
               {link.label}
@@ -22,9 +23,10 @@ export default function Nav() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <a href={`mailto:${profile.email}`} className="btn btn-primary !px-4 !py-2 !text-[13px]">
+          <a href={`mailto:${profile.email}`} className="btn btn-primary hidden !px-4 !py-2 !text-[13px] sm:inline-flex">
             Get in touch
           </a>
+          <MobileNav />
         </div>
       </div>
     </header>

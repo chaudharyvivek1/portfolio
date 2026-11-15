@@ -1,14 +1,14 @@
 import SectionHeading from './SectionHeading';
-import { projects } from '@/data/content';
+import { projects, sections } from '@/data/content';
 
 export default function Work() {
   return (
     <section id="work" className="border-b border-black/[0.06] py-20 dark:border-white/[0.08]">
       <div className="container-page">
         <SectionHeading
-          eyebrow="Selected work"
-          title="Projects I have shipped."
-          description="An open-source component library, a freelance landing site, a full-stack CRUD app and an internship portal."
+          eyebrow={sections.work.eyebrow}
+          title={sections.work.title}
+          description={sections.work.description}
         />
 
         <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -38,7 +38,7 @@ export default function Work() {
                 ))}
               </div>
 
-              <div className="mt-6 pt-1">
+              <div className="mt-auto pt-6">
                 {project.live ? (
                   <a
                     href={project.live}

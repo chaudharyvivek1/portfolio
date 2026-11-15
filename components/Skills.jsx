@@ -1,14 +1,14 @@
 import SectionHeading from './SectionHeading';
-import { skills } from '@/data/content';
+import { sections, skills } from '@/data/content';
 
 export default function Skills() {
   return (
     <section id="skills" className="border-b border-black/[0.06] py-20 dark:border-white/[0.08]">
       <div className="container-page">
         <SectionHeading
-          eyebrow="Skills"
-          title="The toolkit I build with."
-          description="Frontend is home, with enough backend to take a feature end to end."
+          eyebrow={sections.skills.eyebrow}
+          title={sections.skills.title}
+          description={sections.skills.description}
         />
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
